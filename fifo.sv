@@ -60,20 +60,20 @@ module fifo (
       ram[write_ptr] <= data_in ;
       tmp_empty <= 1'b0;
       write_ptr = (write_ptr + 1) % FIFO_DEPTH ;
-    end
     
-    if(read_ptr == write_ptr) begin
-      tmp_full = 1'b1;
+        if(read_ptr == write_ptr) begin
+        tmp_full = 1'b1;
+        end
     end
   
     if(read_en == 1'b1 && empty != 1'b1) begin
       data_out <= ram[read_ptr];
       tmp_full <= 1'b0;
       read_ptr = (read_ptr + 1) % FIFO_DEPTH ;
-    end
     
-    if(write_ptr == read_ptr) begin
-      tmp_empty = 1'b1;
+         if(write_ptr == read_ptr) begin
+         tmp_empty = 1'b1;
+         end
     end
  
   end
