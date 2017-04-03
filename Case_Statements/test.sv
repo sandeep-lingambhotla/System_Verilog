@@ -1,3 +1,5 @@
+// Code your testbench here
+// or browse Examples
 module test();
   
   reg [2:0]a;
@@ -12,7 +14,7 @@ module test();
 
       a = 3'b010;
       #5
-      a = 3'b00x;
+      a = 3'b0xz;
       #5
       a = 3'b0zx;
       #5
